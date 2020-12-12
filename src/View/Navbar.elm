@@ -2,7 +2,9 @@ module View.Navbar exposing (view)
 
 import Html exposing (Html)
 import Html.Attributes exposing (alt, class, src, width)
-import Msg.Msg exposing (Msg)
+import Html.Events exposing (onClick)
+import Model.State exposing (IsOpen(..))
+import Msg.Msg exposing (Msg(..))
 
 view : Html Msg
 view =
@@ -25,6 +27,7 @@ view =
                 ]
             , Html.a
                 [ class "navbar-burger"
+                , onClick (ClickedHamburgerMenu Open)
                 ]
                 [ Html.span [] []
                 , Html.span [] []

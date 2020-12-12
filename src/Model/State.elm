@@ -1,5 +1,9 @@
-module Model.State exposing (State(..))
+module Model.State exposing (State(..), IsOpen(..))
 
 
 type State
-    = LandingPage
+    = LandingPage IsOpen
+
+type IsOpen
+    = Open
+    | Closed

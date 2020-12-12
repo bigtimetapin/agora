@@ -9,6 +9,7 @@ import Model.State exposing (State(..))
 import Msg.Msg exposing (Msg(..))
 import Sub.Sub as Sub
 import View.LandingPage.LandingPage
+import View.LandingPage.OpenHamburgerMenu
 
 
 main : Program () Model Msg
@@ -36,6 +37,11 @@ update msg model =
         NewWindowSize windowSize ->
             ( { model | windowSize = windowSize }, Cmd.none )
 
+        ClickedHamburgerMenu isOpen ->
+            ( { model | state = LandingPage isOpen }, Cmd.none )
+
+
+
 
 
 -- VIEW
@@ -44,5 +50,11 @@ update msg model =
 view : Model -> Html Msg
 view model =
     case model.state of
-        LandingPage ->
-            View.LandingPage.LandingPage.view model.windowSize
+        LandingPage isOpen ->
+            case isOpen of
+                Model.State.Open ->
+                    View.LandingPage.OpenHamburgerMenu.view
+
+                Model.State.Closed ->
+                    View.LandingPage.LandingPage.view model.windowSize
+
