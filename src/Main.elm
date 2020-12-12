@@ -4,13 +4,11 @@ module Main exposing (main)
 
 import Browser
 import Html exposing (Html)
-import Html.Attributes exposing (class)
 import Model.Model as Model exposing (Model)
-import Model.Orientation as Orientation
 import Model.State exposing (State(..))
-import Model.WindowSize exposing (WindowSize)
 import Msg.Msg exposing (Msg(..))
 import Sub.Sub as Sub
+import View.LandingPage.LandingPage
 
 
 main : Program () Model Msg
@@ -47,59 +45,4 @@ view : Model -> Html Msg
 view model =
     case model.state of
         LandingPage ->
-            Html.section
-                [ class "hero has-background-grey-lighter is-fullheight"
-                ]
-                [ Html.div
-                    [ class "hero-body has-text-centered is-family-secondary"
-                    ]
-                    [ Html.div
-                        [ class "container is-fluid"
-                        ]
-                        [ Html.div
-                            [ class "columns is-mobile is-centered is-multiline"
-                            ]
-                            [ Html.div
-                                [ class "column is-4"
-                                ]
-                                [ Html.text ("Width: " ++ viewWindowDimension model .width)
-                                ]
-                            , Html.div
-                                [ class "column is-4"
-                                ]
-                                [ Html.text ("Height: " ++ viewWindowDimension model .height)
-                                ]
-                            , Html.div
-                                [ class "column is-8-mobile"
-                                ]
-                                [ Html.text ("Orientation: " ++ viewOrientation model)
-                                ]
-                            ]
-                        ]
-                    ]
-                , Html.div
-                    [ class "hero-foot has-text-centered"
-                    ]
-                    [ Html.text "footer"
-                    ]
-                ]
-
-
-viewWindowDimension : Model -> (WindowSize -> Int) -> String
-viewWindowDimension model f =
-    case Maybe.map f model.windowSize of
-        Just int ->
-            String.fromInt int
-
-        Nothing ->
-            "Could not detect val"
-
-
-viewOrientation : Model -> String
-viewOrientation model =
-    case model.windowSize of
-        Just ws ->
-            Orientation.toString ws.orientation
-
-        Nothing ->
-            "Could not detect val"
+            View.LandingPage.LandingPage.view model.windowSize

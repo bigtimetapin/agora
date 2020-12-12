@@ -1,9 +1,13 @@
 // custom imports
 @import url('https://fonts.googleapis.com/css?family=Karla:400,700|Rubik:400,500,700');
 
-// custom variables
+// custom variables ////////////////////////////////////////////////////////////////////////////////////////////////////
+// fonts
 $family-sans-serif: "Karla", BlinkMacSystemFont, -apple-system, "Helvetica", "Arial", sans-serif;
 $family-secondary: "Rubik", BlinkMacSystemFont, -apple-system, "Helvetica", "Arial", sans-serif;
+// navbar
+$navbar-item-img-max-height: 10.00rem;
+$navbar-height: 10.00rem;
 
 // bulma import
 @import "node_modules/bulma/bulma";
