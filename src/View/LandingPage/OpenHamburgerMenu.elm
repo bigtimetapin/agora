@@ -4,6 +4,7 @@ import Html exposing (Html)
 import Html.Attributes exposing (class)
 import Msg.Msg exposing (Msg)
 
+
 view : Html Msg
 view =
     Html.div

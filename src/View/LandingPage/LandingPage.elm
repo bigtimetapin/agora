@@ -7,9 +7,11 @@ import Model.WindowSize exposing (WindowSize)
 import Msg.Msg exposing (Msg)
 import View.Navbar as Navbar
 
+
 view : Maybe WindowSize -> Html Msg
 view _ =
     Navbar.view
+
 
 body : Maybe WindowSize -> Html Msg
 body maybeWindowSize =

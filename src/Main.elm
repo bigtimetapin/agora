@@ -42,8 +42,6 @@ update msg model =
 
 
 
-
-
 -- VIEW
 
 
@@ -57,4 +55,3 @@ view model =
 
                 Model.State.Closed ->
                     View.LandingPage.LandingPage.view model.windowSize
-

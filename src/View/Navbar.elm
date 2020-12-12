@@ -6,6 +6,7 @@ import Html.Events exposing (onClick)
 import Model.State exposing (IsOpen(..))
 import Msg.Msg exposing (Msg(..))
 
+
 view : Html Msg
 view =
     Html.nav
@@ -16,6 +17,7 @@ view =
             ]
             [ Html.a
                 [ class "navbar-item"
+
                 -- onClick
                 ]
                 [ Html.img
@@ -42,18 +44,21 @@ view =
                 ]
                 [ Html.a
                     [ class "navbar-item is-tab"
+
                     -- onClick
                     ]
                     [ Html.text "Artists"
                     ]
                 , Html.a
                     [ class "navbar-item is-tab"
+
                     -- onClick
                     ]
                     [ Html.text "Our Story"
                     ]
                 , Html.a
                     [ class "navbar-item is-tab"
+
                     -- onClick
                     ]
                     [ Html.text "Shop"
