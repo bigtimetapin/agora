@@ -1,7 +1,7 @@
 module View.LandingPage.OpenHamburgerMenu exposing (view)
 
 import Html exposing (Html)
-import Html.Attributes exposing (class)
+import Html.Attributes exposing (class, disabled)
 import Html.Events exposing (onClick)
 import Model.State exposing (IsOpen(..))
 import Msg.Msg exposing (Msg(..))
@@ -44,34 +44,43 @@ modal =
                     [ class "column is-12"
                     ]
                     [ Html.button
-                        [ class "button"
+                        [ class "button is-dark is-fullwidth is-static"
                         ]
-                        [ Html.text "button1"
-                        ]
-                    ]
-                , Html.div
-                    [ class "column is-12"
-                    ]
-                    [ Html.button
-                        [ class "button"
-                        ]
-                        [ Html.text "button2"
+                        [ Html.text "MENU"
                         ]
                     ]
                 , Html.div
                     [ class "column is-12"
                     ]
                     [ Html.button
-                        [ class "button"
+                        [ class "button is-dark is-fullwidth"
                         ]
-                        [ Html.text "button3"
+                        [ Html.text "ARTISTS"
                         ]
                     ]
                 , Html.div
                     [ class "column is-12"
                     ]
                     [ Html.button
-                        [ class "button"
+                        [ class "button is-dark is-fullwidth"
+                        ]
+                        [ Html.text "OUR STORY"
+                        ]
+                    ]
+                , Html.div
+                    [ class "column is-12"
+                    ]
+                    [ Html.button
+                        [ class "button is-dark is-fullwidth"
+                        ]
+                        [ Html.text "SHOP"
+                        ]
+                    ]
+                , Html.div
+                    [ class "column is-12"
+                    ]
+                    [ Html.button
+                        [ class "button is-dark is-fullwidth"
                         ]
                         [ Html.text "button4"
                         ]
