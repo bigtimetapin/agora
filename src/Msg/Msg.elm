@@ -1,9 +1,9 @@
 module Msg.Msg exposing (Msg(..))
 
-import Model.State exposing (IsOpen)
 import Model.WindowSize exposing (WindowSize)
+import Msg.Navbar
 
 
 type Msg
     = NewWindowSize (Maybe WindowSize)
-    | ClickedHamburgerMenu IsOpen
+    | NavbarClick Msg.Navbar.Navbar

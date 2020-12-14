@@ -1,10 +1,11 @@
 module View.LandingPage.OpenHamburgerMenu exposing (view)
 
 import Html exposing (Html)
-import Html.Attributes exposing (class, disabled)
+import Html.Attributes exposing (class)
 import Html.Events exposing (onClick)
-import Model.State exposing (IsOpen(..))
+import Model.State exposing (IsOpen(..), State(..))
 import Msg.Msg exposing (Msg(..))
+import Msg.Navbar exposing (Navbar(..))
 
 
 view : Html Msg
@@ -49,47 +50,32 @@ modal =
                         [ Html.text "MENU"
                         ]
                     ]
-                , Html.div
-                    [ class "column is-12"
-                    ]
-                    [ Html.button
-                        [ class "button is-dark is-fullwidth"
-                        ]
-                        [ Html.text "ARTISTS"
-                        ]
-                    ]
-                , Html.div
-                    [ class "column is-12"
-                    ]
-                    [ Html.button
-                        [ class "button is-dark is-fullwidth"
-                        ]
-                        [ Html.text "OUR STORY"
-                        ]
-                    ]
-                , Html.div
-                    [ class "column is-12"
-                    ]
-                    [ Html.button
-                        [ class "button is-dark is-fullwidth"
-                        ]
-                        [ Html.text "SHOP"
-                        ]
-                    ]
-                , Html.div
-                    [ class "column is-12"
-                    ]
-                    [ Html.button
-                        [ class "button is-dark is-fullwidth"
-                        ]
-                        [ Html.text "button4"
-                        ]
-                    ]
+                , button "ARTISTS" (NavbarClick (ClickedTab Artists))
+                , button "OUR STORY" (NavbarClick (ClickedTab OurStory))
+                , button "SHOP" (NavbarClick (ClickedTab Shop))
+                , button "ABOUT" (NavbarClick (ClickedTab About))
+                , button "CONTACT" (NavbarClick (ClickedTab Contact))
+                , button "CART" (NavbarClick (ClickedTab Cart))
+                , button "LOGIN" (NavbarClick (ClickedTab Login))
                 ]
             ]
         , Html.button
             [ class "modal-close is-large"
-            , onClick (ClickedHamburgerMenu Closed)
+            , onClick (NavbarClick (ClickedHamburgerMenu Closed))
             ]
             []
+        ]
+
+
+button : String -> Msg -> Html Msg
+button label msg =
+    Html.div
+        [ class "column is-12"
+        , onClick msg
+        ]
+        [ Html.button
+            [ class "button is-dark is-fullwidth"
+            ]
+            [ Html.text label
+            ]
         ]

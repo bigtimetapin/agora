@@ -5,8 +5,9 @@ module Main exposing (main)
 import Browser
 import Html exposing (Html)
 import Model.Model as Model exposing (Model)
-import Model.State exposing (State(..))
+import Model.State exposing (IsOpen(..), State(..))
 import Msg.Msg exposing (Msg(..))
+import Msg.Navbar exposing (Navbar(..))
 import Sub.Sub as Sub
 import View.LandingPage.LandingPage
 import View.LandingPage.OpenHamburgerMenu
@@ -37,8 +38,13 @@ update msg model =
         NewWindowSize windowSize ->
             ( { model | windowSize = windowSize }, Cmd.none )
 
-        ClickedHamburgerMenu isOpen ->
-            ( { model | state = LandingPage isOpen }, Cmd.none )
+        NavbarClick option ->
+            case option of
+                ClickedHamburgerMenu isOpen ->
+                    ( { model | state = LandingPage isOpen }, Cmd.none )
+
+                ClickedTab state ->
+                    ( { model | state = state }, Cmd.none )
 
 
 
@@ -55,3 +61,27 @@ view model =
 
                 Model.State.Closed ->
                     View.LandingPage.LandingPage.view model.windowSize
+
+        Artists ->
+            View.LandingPage.LandingPage.view model.windowSize
+
+        OurStory ->
+            View.LandingPage.LandingPage.view model.windowSize
+
+        Shop ->
+            View.LandingPage.LandingPage.view model.windowSize
+
+        About ->
+            View.LandingPage.LandingPage.view model.windowSize
+
+        Contact ->
+            View.LandingPage.LandingPage.view model.windowSize
+
+        ReportAnIssue ->
+            View.LandingPage.LandingPage.view model.windowSize
+
+        Cart ->
+            View.LandingPage.LandingPage.view model.windowSize
+
+        Login ->
+            View.LandingPage.LandingPage.view model.windowSize

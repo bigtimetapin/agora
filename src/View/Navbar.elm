@@ -3,8 +3,9 @@ module View.Navbar exposing (view)
 import Html exposing (Html)
 import Html.Attributes exposing (alt, class, src, width)
 import Html.Events exposing (onClick)
-import Model.State exposing (IsOpen(..))
+import Model.State exposing (IsOpen(..), State(..))
 import Msg.Msg exposing (Msg(..))
+import Msg.Navbar exposing (Navbar(..))
 
 
 view : Html Msg
@@ -17,8 +18,7 @@ view =
             ]
             [ Html.a
                 [ class "navbar-item"
-
-                -- onClick
+                , onClick (NavbarClick (ClickedTab (LandingPage Closed)))
                 ]
                 [ Html.img
                     [ src "images/agora-nav.jpeg"
@@ -29,7 +29,7 @@ view =
                 ]
             , Html.a
                 [ class "navbar-burger"
-                , onClick (ClickedHamburgerMenu Open)
+                , onClick (NavbarClick (ClickedHamburgerMenu Open))
                 ]
                 [ Html.span [] []
                 , Html.span [] []
@@ -44,22 +44,19 @@ view =
                 ]
                 [ Html.a
                     [ class "navbar-item is-tab"
-
-                    -- onClick
+                    , onClick (NavbarClick (ClickedTab Artists))
                     ]
                     [ Html.text "Artists"
                     ]
                 , Html.a
                     [ class "navbar-item is-tab"
-
-                    -- onClick
+                    , onClick (NavbarClick (ClickedTab OurStory))
                     ]
                     [ Html.text "Our Story"
                     ]
                 , Html.a
                     [ class "navbar-item is-tab"
-
-                    -- onClick
+                    , onClick (NavbarClick (ClickedTab Shop))
                     ]
                     [ Html.text "Shop"
                     ]
@@ -76,11 +73,13 @@ view =
                         ]
                         [ Html.a
                             [ class "navbar-item"
+                            , onClick (NavbarClick (ClickedTab About))
                             ]
                             [ Html.text "About"
                             ]
                         , Html.a
                             [ class "navbar-item"
+                            , onClick (NavbarClick (ClickedTab Contact))
                             ]
                             [ Html.text "Contact"
                             ]
@@ -90,6 +89,7 @@ view =
                             []
                         , Html.a
                             [ class "navbar-item"
+                            , onClick (NavbarClick (ClickedTab ReportAnIssue))
                             ]
                             [ Html.text "Report an issue"
                             ]
@@ -107,11 +107,13 @@ view =
                         ]
                         [ Html.a
                             [ class "button is-primary"
+                            , onClick (NavbarClick (ClickedTab Cart))
                             ]
                             [ Html.text "Cart"
                             ]
                         , Html.a
                             [ class "button is-light"
+                            , onClick (NavbarClick (ClickedTab Login))
                             ]
                             [ Html.strong
                                 []
