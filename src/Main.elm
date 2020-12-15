@@ -9,6 +9,7 @@ import Model.State exposing (IsOpen(..), State(..))
 import Msg.Msg exposing (Msg(..))
 import Msg.Navbar exposing (Navbar(..))
 import Sub.Sub as Sub
+import View.Artists.Artists
 import View.LandingPage.LandingPage
 import View.LandingPage.OpenHamburgerMenu
 
@@ -63,7 +64,7 @@ view model =
                     View.LandingPage.LandingPage.view model.windowSize
 
         Artists ->
-            View.LandingPage.LandingPage.view model.windowSize
+            View.Artists.Artists.view
 
         OurStory ->
             View.LandingPage.LandingPage.view model.windowSize
