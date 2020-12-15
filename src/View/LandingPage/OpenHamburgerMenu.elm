@@ -41,8 +41,8 @@ modal =
             [ Html.div
                 [ class "columns is-multiline has-text-centered is-family-secondary"
                 ]
-                [ button { label = "LOGIN", msg = NavbarClick (ClickedTab Login), style = "is-link" }
-                , button { label = "CART", msg = NavbarClick (ClickedTab Cart), style = "is-link" }
+                [ button { label = "LOGIN", msg = NavbarClick (ClickedTab Login), style = "is-link is-light" }
+                , button { label = "CART", msg = NavbarClick (ClickedTab Cart), style = "is-link is-light" }
                 , button { label = "ARTISTS", msg = NavbarClick (ClickedTab Artists), style = "is-dark" }
                 , button { label = "OUR STORY", msg = NavbarClick (ClickedTab OurStory), style = "is-dark" }
                 , button { label = "SHOP", msg = NavbarClick (ClickedTab Shop), style = "is-dark" }
