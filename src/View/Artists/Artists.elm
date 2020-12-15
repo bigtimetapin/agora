@@ -3,7 +3,8 @@ module View.Artists.Artists exposing (view)
 import Html exposing (Html)
 import Html.Attributes exposing (class)
 import Msg.Msg exposing (Msg)
-import View.Artists.Artist
+import View.Artists.Lucas
+import View.Artists.Marv
 import View.Navbar
 
 view : Html Msg
@@ -22,6 +23,11 @@ body =
         [ Html.div
             [ class "column"
             ]
-            [ View.Artists.Artist.view
+            [ View.Artists.Marv.view
+            ]
+        , Html.div
+            [ class "column"
+            ]
+            [ View.Artists.Lucas.view
             ]
         ]
