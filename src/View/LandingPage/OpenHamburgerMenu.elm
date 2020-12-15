@@ -41,22 +41,13 @@ modal =
             [ Html.div
                 [ class "columns is-multiline has-text-centered is-family-secondary"
                 ]
-                [ Html.div
-                    [ class "column is-12"
-                    ]
-                    [ Html.button
-                        [ class "button is-dark is-fullwidth is-static"
-                        ]
-                        [ Html.text "MENU"
-                        ]
-                    ]
-                , button "ARTISTS" (NavbarClick (ClickedTab Artists))
-                , button "OUR STORY" (NavbarClick (ClickedTab OurStory))
-                , button "SHOP" (NavbarClick (ClickedTab Shop))
-                , button "ABOUT" (NavbarClick (ClickedTab About))
-                , button "CONTACT" (NavbarClick (ClickedTab Contact))
-                , button "CART" (NavbarClick (ClickedTab Cart))
-                , button "LOGIN" (NavbarClick (ClickedTab Login))
+                [ button { label = "LOGIN", msg = NavbarClick (ClickedTab Login), style = "is-link" }
+                , button { label = "CART", msg = NavbarClick (ClickedTab Cart), style = "is-link" }
+                , button { label = "ARTISTS", msg = NavbarClick (ClickedTab Artists), style = "is-dark" }
+                , button { label = "OUR STORY", msg = NavbarClick (ClickedTab OurStory), style = "is-dark" }
+                , button { label = "SHOP", msg = NavbarClick (ClickedTab Shop), style = "is-dark" }
+                , button { label = "ABOUT", msg = NavbarClick (ClickedTab About), style = "is-dark" }
+                , button { label = "CONTACT", msg = NavbarClick (ClickedTab Contact), style = "is-dark" }
                 ]
             ]
         , Html.button
@@ -67,15 +58,22 @@ modal =
         ]
 
 
-button : String -> Msg -> Html Msg
-button label msg =
+type alias ButtonArgs =
+    { label : String
+    , msg : Msg
+    , style : String
+    }
+
+
+button : ButtonArgs -> Html Msg
+button buttonArgs =
     Html.div
         [ class "column is-12"
-        , onClick msg
+        , onClick buttonArgs.msg
         ]
         [ Html.button
-            [ class "button is-dark is-fullwidth"
+            [ class ("button is-fullwidth is-medium " ++ buttonArgs.style)
             ]
-            [ Html.text label
+            [ Html.text buttonArgs.label
             ]
         ]
