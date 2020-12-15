@@ -7,6 +7,7 @@ import View.Artists.Lucas
 import View.Artists.Marv
 import View.Navbar
 
+
 view : Html Msg
 view =
     Html.div
@@ -15,7 +16,8 @@ view =
         , body
         ]
 
-body: Html Msg
+
+body : Html Msg
 body =
     Html.div
         [ class "columns is-multiline"

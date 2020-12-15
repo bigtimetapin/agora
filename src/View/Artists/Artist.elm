@@ -1,8 +1,9 @@
-module View.Artists.Artist exposing (view, Args)
+module View.Artists.Artist exposing (Args, view)
 
 import Html exposing (Html)
 import Html.Attributes exposing (class, href, src, target, width)
 import Msg.Msg exposing (Msg)
+
 
 view : Args -> Html Msg
 view args =
@@ -56,10 +57,11 @@ view args =
             ]
         ]
 
+
 type alias Args =
-    { name: String
-    , imageSrc: String
-    , spotifyURL: String
-    , appleURL: String
-    , soundcloudURL: String
+    { name : String
+    , imageSrc : String
+    , spotifyURL : String
+    , appleURL : String
+    , soundcloudURL : String
     }

@@ -4,6 +4,7 @@ import Html exposing (Html)
 import Msg.Msg exposing (Msg)
 import View.Artists.Artist
 
+
 view : Html Msg
 view =
     View.Artists.Artist.view
