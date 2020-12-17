@@ -49,7 +49,7 @@ update msg model =
                             ( { model | navbar = Open }, Cmd.none )
 
                 ClickedTab state ->
-                    ( { model | state = state }, Cmd.none )
+                    ( { model | state = state, navbar = Closed }, Cmd.none )
 
 
 
