@@ -15,13 +15,13 @@ view isOpen =
         isActive =
             case isOpen of
                 Open ->
-                    "is-active"
+                    " is-active"
 
                 Closed ->
                     ""
     in
     Html.nav
-        [ class "navbar is-black"
+        [ class "navbar is-black is-fixed-top"
         ]
         [ Html.div
             [ class "navbar-brand"
@@ -38,7 +38,7 @@ view isOpen =
                     []
                 ]
             , Html.a
-                [ class "navbar-burger"
+                [ class ("navbar-burger" ++ isActive)
                 , onClick (NavbarClick ClickedHamburgerMenu)
                 ]
                 [ Html.span [] []
@@ -47,7 +47,7 @@ view isOpen =
                 ]
             ]
         , Html.div
-            [ class ("navbar-menu is-size-3 " ++ isActive)
+            [ class ("navbar-menu is-size-3" ++ isActive)
             ]
             [ Html.div
                 [ class "navbar-start"
