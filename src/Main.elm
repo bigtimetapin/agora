@@ -45,7 +45,6 @@ update msg model =
                         Open ->
                             ( { model | navbar = Closed }, Cmd.none )
 
-
                         Closed ->
                             ( { model | navbar = Open }, Cmd.none )
 
@@ -60,7 +59,7 @@ update msg model =
 view : Model -> Html Msg
 view model =
     case model.state of
-        LandingPage->
+        LandingPage ->
             View.LandingPage.LandingPage.view model
 
         Artists ->

@@ -52,7 +52,7 @@ modal =
             ]
         , Html.button
             [ class "modal-close is-large"
-            , onClick (NavbarClick (ClickedHamburgerMenu))
+            , onClick (NavbarClick ClickedHamburgerMenu)
             ]
             []
         ]

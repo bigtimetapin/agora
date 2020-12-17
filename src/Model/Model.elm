@@ -10,7 +10,7 @@ import Task
 type alias Model =
     { state : State
     , windowSize : Maybe WindowSize
-    , navbar: IsOpen
+    , navbar : IsOpen
     }
 
 

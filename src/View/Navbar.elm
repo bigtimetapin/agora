@@ -11,7 +11,7 @@ import Msg.Navbar exposing (Navbar(..))
 view : IsOpen -> Html Msg
 view isOpen =
     let
-        isActive: String
+        isActive : String
         isActive =
             case isOpen of
                 Open ->
@@ -39,7 +39,7 @@ view isOpen =
                 ]
             , Html.a
                 [ class "navbar-burger"
-                , onClick (NavbarClick (ClickedHamburgerMenu))
+                , onClick (NavbarClick ClickedHamburgerMenu)
                 ]
                 [ Html.span [] []
                 , Html.span [] []
