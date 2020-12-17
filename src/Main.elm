@@ -11,7 +11,6 @@ import Msg.Navbar exposing (Navbar(..))
 import Sub.Sub as Sub
 import View.Artists.Artists
 import View.LandingPage.LandingPage
-import View.LandingPage.OpenHamburgerMenu
 
 
 main : Program () Model Msg
@@ -41,8 +40,14 @@ update msg model =
 
         NavbarClick option ->
             case option of
-                ClickedHamburgerMenu isOpen ->
-                    ( { model | state = LandingPage isOpen }, Cmd.none )
+                ClickedHamburgerMenu ->
+                    case model.navbar of
+                        Open ->
+                            ( { model | navbar = Closed }, Cmd.none )
+
+
+                        Closed ->
+                            ( { model | navbar = Open }, Cmd.none )
 
                 ClickedTab state ->
                     ( { model | state = state }, Cmd.none )
@@ -55,34 +60,29 @@ update msg model =
 view : Model -> Html Msg
 view model =
     case model.state of
-        LandingPage isOpen ->
-            case isOpen of
-                Model.State.Open ->
-                    View.LandingPage.OpenHamburgerMenu.view
-
-                Model.State.Closed ->
-                    View.LandingPage.LandingPage.view model.windowSize
+        LandingPage->
+            View.LandingPage.LandingPage.view model
 
         Artists ->
-            View.Artists.Artists.view
+            View.Artists.Artists.view model
 
         OurStory ->
-            View.LandingPage.LandingPage.view model.windowSize
+            View.LandingPage.LandingPage.view model
 
         Shop ->
-            View.LandingPage.LandingPage.view model.windowSize
+            View.LandingPage.LandingPage.view model
 
         About ->
-            View.LandingPage.LandingPage.view model.windowSize
+            View.LandingPage.LandingPage.view model
 
         Contact ->
-            View.LandingPage.LandingPage.view model.windowSize
+            View.LandingPage.LandingPage.view model
 
         ReportAnIssue ->
-            View.LandingPage.LandingPage.view model.windowSize
+            View.LandingPage.LandingPage.view model
 
         Cart ->
-            View.LandingPage.LandingPage.view model.windowSize
+            View.LandingPage.LandingPage.view model
 
         Login ->
-            View.LandingPage.LandingPage.view model.windowSize
+            View.LandingPage.LandingPage.view model

@@ -10,6 +10,7 @@ import Task
 type alias Model =
     { state : State
     , windowSize : Maybe WindowSize
+    , navbar: IsOpen
     }
 
 
@@ -31,8 +32,9 @@ init =
                 Err _ ->
                     NewWindowSize Nothing
     in
-    ( { state = LandingPage Closed
+    ( { state = LandingPage
       , windowSize = Nothing
+      , navbar = Closed
       }
     , Task.attempt handle Browser.Dom.getViewport
     )

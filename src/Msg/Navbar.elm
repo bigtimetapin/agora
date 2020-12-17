@@ -4,5 +4,5 @@ import Model.State exposing (IsOpen, State)
 
 
 type Navbar
-    = ClickedHamburgerMenu IsOpen
+    = ClickedHamburgerMenu
     | ClickedTab State

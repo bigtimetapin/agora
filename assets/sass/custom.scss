@@ -18,3 +18,26 @@ $navbar-height: 5.00rem;
 
 // bulma import ////////////////////////////////////////////////////////////////////////////////////////////////////////
 @import "node_modules/bulma/bulma";
+
+// extensions //////////////////////////////////////////////////////////////////////////////////////////////////////////
+// navbar
+@include until($tablet) {
+  .navbar-menu {
+    // display
+    display: block;
+    opacity: 0;
+    // position
+    position: absolute; /* or float: left; width: 100%;*/
+    left: 0;
+    right: 0;
+    // transform
+    transform: translateY(-50%);
+    transition: all .4s ease-in-out;
+    pointer-events: none;
+  }
+  .navbar-menu.is-active {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+}

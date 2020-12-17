@@ -8,8 +8,18 @@ import Msg.Msg exposing (Msg(..))
 import Msg.Navbar exposing (Navbar(..))
 
 
-view : Html Msg
-view =
+view : IsOpen -> Html Msg
+view isOpen =
+    let
+        isActive: String
+        isActive =
+            case isOpen of
+                Open ->
+                    "is-active"
+
+                Closed ->
+                    ""
+    in
     Html.nav
         [ class "navbar is-black"
         ]
@@ -18,7 +28,7 @@ view =
             ]
             [ Html.a
                 [ class "navbar-item"
-                , onClick (NavbarClick (ClickedTab (LandingPage Closed)))
+                , onClick (NavbarClick (ClickedTab LandingPage))
                 ]
                 [ Html.img
                     [ src "images/agora-nav.jpeg"
@@ -29,7 +39,7 @@ view =
                 ]
             , Html.a
                 [ class "navbar-burger"
-                , onClick (NavbarClick (ClickedHamburgerMenu Open))
+                , onClick (NavbarClick (ClickedHamburgerMenu))
                 ]
                 [ Html.span [] []
                 , Html.span [] []
@@ -37,7 +47,7 @@ view =
                 ]
             ]
         , Html.div
-            [ class "navbar-menu is-size-3"
+            [ class ("navbar-menu is-size-3 " ++ isActive)
             ]
             [ Html.div
                 [ class "navbar-start"

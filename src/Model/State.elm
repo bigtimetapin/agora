@@ -2,7 +2,7 @@ module Model.State exposing (IsOpen(..), State(..))
 
 
 type State
-    = LandingPage IsOpen
+    = LandingPage
     | Artists
     | OurStory
     | Shop

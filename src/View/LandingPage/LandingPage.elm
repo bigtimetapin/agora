@@ -2,15 +2,16 @@ module View.LandingPage.LandingPage exposing (view)
 
 import Html exposing (Html)
 import Html.Attributes exposing (class)
+import Model.Model exposing (Model)
 import Model.Orientation as Orientation
 import Model.WindowSize exposing (WindowSize)
 import Msg.Msg exposing (Msg)
 import View.Navbar as Navbar
 
 
-view : Maybe WindowSize -> Html Msg
-view _ =
-    Navbar.view
+view : Model -> Html Msg
+view model =
+    Navbar.view model.navbar
 
 
 body : Maybe WindowSize -> Html Msg
