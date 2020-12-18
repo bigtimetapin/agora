@@ -31,7 +31,7 @@ view isOpen =
                 , onClick (NavbarClick (ClickedTab LandingPage))
                 ]
                 [ Html.img
-                    [ src "images/agora-nav.jpeg"
+                    [ src "images/agora-nav-black.jpeg"
                     , alt "Agora Records"
                     , width 250
                     ]

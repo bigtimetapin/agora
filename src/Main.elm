@@ -11,6 +11,7 @@ import Msg.Navbar exposing (Navbar(..))
 import Sub.Sub as Sub
 import View.Artists.Artists
 import View.LandingPage.LandingPage
+import View.OurStory.OurStory
 
 
 main : Program () Model Msg
@@ -66,7 +67,7 @@ view model =
             View.Artists.Artists.view model
 
         OurStory ->
-            View.LandingPage.LandingPage.view model
+            View.OurStory.OurStory.view model
 
         Shop ->
             View.LandingPage.LandingPage.view model

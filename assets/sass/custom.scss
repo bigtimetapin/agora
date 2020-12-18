@@ -3,9 +3,24 @@
 @import url('https://fonts.googleapis.com/css?family=Karla:400,700|Rubik:400,500,700');
 
 // custom classes //////////////////////////////////////////////////////////////////////////////////////////////////////
+// background images
 .has-bg-img1 {
   background-image: url("../images/floral.jpeg");
   background-size: cover;
+}
+
+.has-bg-img2 {
+  background-image: url("../images/000050120025.jpeg");
+  background-size: cover;
+}
+
+// our story tab
+.our-story1 {
+  height: 300px;
+}
+
+.our-story2 {
+  padding-top: 240px;
 }
 
 // custom variables ////////////////////////////////////////////////////////////////////////////////////////////////////
