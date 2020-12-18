@@ -6,6 +6,7 @@ import Model.Model exposing (Model)
 import Msg.Msg exposing (Msg)
 import View.Navbar
 
+
 view : Model -> Html Msg
 view model =
     Html.div
