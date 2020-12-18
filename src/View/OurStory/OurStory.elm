@@ -16,7 +16,7 @@ view model =
             [ class "has-bg-img2 our-story1"
             ]
             [ Html.h1
-                [ class "title is-1 has-text-white has-text-right our-story2"
+                [ class "title is-3 has-text-white has-text-right our-story2"
                 ]
                 [ Html.text "Our Story"
                 ]
