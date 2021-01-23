@@ -32,7 +32,7 @@ init =
                 Err _ ->
                     NewWindowSize Nothing
     in
-    ( { state = LandingPage
+    ( { state = Artists
       , windowSize = Nothing
       , navbar = Closed
       }
